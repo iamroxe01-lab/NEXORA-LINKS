@@ -3,48 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080914">
-<title>NEXORA | Official Links</title>
+<meta name="theme-color" content="#07100b">
+<title>NEXORA | Download & Setup</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 :root{
---bg:#080914;
---cyan:#65eaff;
---purple:#9272ff;
+--green:#a5ffbd;
+--green2:#5ce88a;
+--bg:#080e0a;
+--card:#111b14;
+--text:#f0fff3;
+--muted:#91a397;
 }
 
 body{
 background:var(--bg);
-color:white;
+color:var(--text);
 font-family:Arial,sans-serif;
 min-height:100vh;
 overflow-x:hidden;
 }
 
-.bg{
+.background{
 position:fixed;
 inset:0;
 z-index:-1;
 overflow:hidden;
 }
 
-.orb{
+.glow{
 position:absolute;
 width:350px;
 height:350px;
 border-radius:50%;
 filter:blur(130px);
-opacity:.22;
-animation:float 9s infinite alternate ease-in-out;
+opacity:.17;
+animation:float 9s infinite alternate;
 }
 
-.orb.one{background:#006aff;top:-150px;left:-100px}
-.orb.two{background:#8c27ff;bottom:-150px;right:-100px;animation-delay:2s}
+.glow.one{
+background:#42ff80;
+top:-180px;
+left:-100px;
+}
+
+.glow.two{
+background:#00a85a;
+bottom:-180px;
+right:-100px;
+animation-delay:2s;
+}
 
 @keyframes float{
-to{transform:translate(100px,100px) scale(1.2)}
+to{transform:translate(90px,80px) scale(1.2)}
 }
 
 nav{
@@ -60,352 +77,267 @@ border-bottom:1px solid #ffffff12;
 font-size:23px;
 font-weight:900;
 letter-spacing:3px;
-color:var(--cyan);
+color:var(--green);
 }
 
 .status{
 font-size:10px;
-color:#64e8a0;
+color:var(--green);
 letter-spacing:1px;
 }
 
 .hero{
 text-align:center;
-padding:95px 20px 55px;
-animation:show 1s ease;
+padding:85px 20px 45px;
+animation:appear 1s ease;
 }
 
 .badge{
 display:inline-block;
-border:1px solid #65eaff55;
 padding:9px 17px;
+border:1px solid #a5ffbd45;
 border-radius:30px;
+color:var(--green);
 font-size:10px;
 letter-spacing:2px;
-color:var(--cyan);
 margin-bottom:25px;
 }
 
 h1{
-font-size:clamp(43px,9vw,76px);
+font-size:clamp(43px,9vw,72px);
 font-weight:900;
 letter-spacing:-3px;
 }
 
 h1 span{
-background:linear-gradient(90deg,var(--cyan),var(--purple),var(--cyan));
-background-size:200%;
-background-clip:text;
--webkit-background-clip:text;
-color:transparent;
-animation:shine 4s linear infinite;
-}
-
-@keyframes shine{
-to{background-position:200%}
+color:var(--green);
+text-shadow:0 0 30px #5ce88a30;
 }
 
 .hero p{
-color:#9397aa;
+color:var(--muted);
 font-size:14px;
 line-height:1.8;
-margin-top:20px;
+margin-top:18px;
 }
 
 .container{
 width:90%;
 max-width:650px;
 margin:auto;
-padding-bottom:70px;
+padding-bottom:65px;
 }
 
-.heading{
+.section-label{
 font-size:11px;
 letter-spacing:3px;
-color:#777f96;
-margin:30px 0 17px;
+color:var(--green);
+margin:28px 0 15px;
 }
 
 .card{
-display:flex;
-align-items:center;
-gap:16px;
-padding:19px;
-margin-bottom:13px;
-border:1px solid #ffffff15;
-border-radius:14px;
-background:linear-gradient(110deg,#171a2b,#10121e);
-text-decoration:none;
-color:white;
+background:linear-gradient(130deg,#142119,#101812);
+border:1px solid #a5ffbd20;
+border-radius:17px;
+padding:23px;
+margin-bottom:18px;
+animation:appear .8s ease;
 transition:.3s;
-animation:show .7s ease both;
 }
 
 .card:hover{
-transform:translateY(-5px);
-border-color:var(--cyan);
-box-shadow:0 10px 35px #65eaff17;
+transform:translateY(-4px);
+border-color:#a5ffbd75;
+box-shadow:0 12px 35px #5ce88a12;
+}
+
+.card-top{
+display:flex;
+align-items:center;
+gap:15px;
+margin-bottom:19px;
 }
 
 .icon{
-width:48px;
-height:48px;
-border-radius:13px;
+width:49px;
+height:49px;
 display:grid;
 place-items:center;
-background:#65eaff12;
-font-size:23px;
+border-radius:13px;
+background:#a5ffbd12;
+font-size:24px;
 }
 
-.info{flex:1}
-
-.info h3{
-font-size:15px;
+.card h2{
+font-size:19px;
 margin-bottom:6px;
 }
 
-.info p{
+.card p{
 font-size:12px;
-color:#858ba0;
-}
-
-.arrow{
-color:var(--cyan);
-font-size:22px;
-}
-
-.special{
-margin-top:35px;
-padding:30px 22px;
-text-align:center;
-border:1px solid #9272ff55;
-border-radius:19px;
-background:linear-gradient(130deg,#17243c,#211538);
-position:relative;
-overflow:hidden;
-}
-
-.special:before{
-content:"";
-position:absolute;
-width:150px;
-height:150px;
-background:#65eaff;
-filter:blur(100px);
-opacity:.15;
-top:-70px;
-right:-30px;
-}
-
-.special h2{
-font-size:23px;
-margin-bottom:12px;
-}
-
-.special p{
-color:#a5a7ba;
-font-size:13px;
+color:var(--muted);
 line-height:1.7;
-margin-bottom:22px;
 }
 
 .btn{
-display:inline-block;
-padding:15px 27px;
-background:linear-gradient(100deg,var(--cyan),var(--purple));
-color:#080914;
-border-radius:9px;
-font-weight:900;
-font-size:12px;
+display:block;
+width:100%;
+padding:16px;
+border-radius:10px;
+background:linear-gradient(100deg,#a5ffbd,#5ce88a);
+color:#07120a;
+text-align:center;
 text-decoration:none;
+font-size:13px;
+font-weight:900;
 letter-spacing:1px;
 transition:.3s;
+border:none;
 }
 
 .btn:hover{
-transform:scale(1.06);
-box-shadow:0 0 30px #65eaff55;
+transform:scale(1.02);
+box-shadow:0 0 25px #5ce88a40;
+}
+
+.video{
+position:relative;
+width:100%;
+aspect-ratio:16/9;
+overflow:hidden;
+border-radius:12px;
+background:#000;
+border:1px solid #a5ffbd25;
+}
+
+.video iframe{
+width:100%;
+height:100%;
+border:0;
 }
 
 footer{
 text-align:center;
 padding:25px;
 border-top:1px solid #ffffff12;
-color:#62677a;
+color:#65776a;
 font-size:11px;
+line-height:2;
 }
 
-footer span{color:var(--cyan)}
+footer span{
+color:var(--green);
+}
 
-@keyframes show{
+@keyframes appear{
 from{opacity:0;transform:translateY(25px)}
 to{opacity:1;transform:translateY(0)}
 }
 
 @media(max-width:500px){
-.hero{padding-top:75px}
+.hero{padding-top:70px}
+.card{padding:19px}
 nav{padding:0 5%}
-.card{padding:15px}
 }
 </style>
 </head>
 
 <body>
 
-<div class="bg">
-<div class="orb one"></div>
-<div class="orb two"></div>
+<div class="background">
+<div class="glow one"></div>
+<div class="glow two"></div>
 </div>
 
 <nav>
 <div class="logo">NEXORA.</div>
-<div class="status">● ONLINE</div>
+<div class="status">● OFFICIAL</div>
 </nav>
 
 <header class="hero">
-<div class="badge">✦ OFFICIAL LINK HUB</div>
 
-<h1>EXPLORE<br><span>NEXORA.</span></h1>
+<div class="badge">✦ NEXORA DOWNLOAD CENTER</div>
+
+<h1>GET <span>STARTED.</span></h1>
 
 <p>
-Welcome to my official link destination.<br>
-Everything important, connected in one place.
+Everything you need, in one place.<br>
+Download and follow the setup tutorial.
 </p>
+
 </header>
 
 <main class="container">
 
-<div class="heading">01 — SPECIAL DESTINATION</div>
+<div class="section-label">
+01 — DOWNLOAD
+</div>
 
-<section class="special">
-<h2>✦ SPECIAL LINK</h2>
-<p>
-Access the exclusive destination<br>
-through the official NEXORA link.
-</p>
+<section class="card">
 
-<a class="btn" id="specialBtn"
+<div class="card-top">
+
+<div class="icon">📥</div>
+
+<div>
+<h2>Download</h2>
+<p>Access the official download link.</p>
+</div>
+
+</div>
+
+<a class="btn"
 href="https://linkpays.in/ua5qzIO7"
 target="_blank"
 rel="noopener noreferrer">
-OPEN SPECIAL LINK ↗
+
+DOWNLOAD NOW ↗
+
 </a>
+
 </section>
 
-<div class="heading">02 — SOCIAL & COMMUNITY</div>
+<div class="section-label">
+02 — SETUP TUTORIAL
+</div>
 
-<div id="links"></div>
+<section class="card">
+
+<div class="card-top">
+
+<div class="icon">🎬</div>
+
+<div>
+<h2>Setup Video</h2>
+<p>Watch the complete setup tutorial.</p>
+</div>
+
+</div>
+
+<div class="video">
+
+<iframe
+src="https://www.youtube-nocookie.com/embed/OYmKYkhhEeQ"
+title="NEXORA Setup Tutorial"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</section>
 
 </main>
 
 <footer>
+
 <div class="logo">NEXORA.</div>
-<br>
-© 2026 NEXORA. ALL RIGHTS RESERVED.
-<br><br>
-ONE DESTINATION. ALL LINKS.
+
+<p>© 2026 NEXORA. All rights reserved.</p>
+
+<p><span>DOWNLOAD • SETUP • ENJOY</span></p>
+
 </footer>
-
-<script>
-
-/* ==================================
-   NEXORA LINK MANAGEMENT
-   FUTURE LINKS YAHAN ADD KARNA
-================================== */
-
-const LINKS = [
-
-{
-icon:"▶️",
-name:"YouTube",
-description:"Videos, gaming and original content",
-url:"https://youtube.com"
-},
-
-{
-icon:"📸",
-name:"Instagram",
-description:"Updates, stories and announcements",
-url:"https://instagram.com"
-},
-
-{
-icon:"🎮",
-name:"Gaming",
-description:"Gaming content and adventures",
-url:"https://youtube.com"
-},
-
-{
-icon:"💬",
-name:"Community",
-description:"Join the community",
-url:"https://discord.com"
-}
-
-];
-
-/* ==================================
-   AUTOMATIC LINK GENERATOR
-================================== */
-
-const linksContainer=document.getElementById("links");
-
-function createLinks(){
-
-linksContainer.innerHTML=LINKS.map((item,index)=>`
-
-<a class="card"
-href="${safeURL(item.url)}"
-target="_blank"
-rel="noopener noreferrer"
-style="animation-delay:${index*.12}s">
-
-<div class="icon">${escapeHTML(item.icon)}</div>
-
-<div class="info">
-<h3>${escapeHTML(item.name)}</h3>
-<p>${escapeHTML(item.description)}</p>
-</div>
-
-<div class="arrow">↗</div>
-
-</a>
-
-`).join("");
-
-}
-
-function escapeHTML(value){
-
-return String(value).replace(/[&<>"']/g,c=>({
-"&":"&amp;",
-"<":"&lt;",
-">":"&gt;",
-'"':"&quot;",
-"'":"&#39;"
-}[c]));
-
-}
-
-function safeURL(value){
-
-try{
-const url=new URL(value);
-
-if(url.protocol==="https:"||url.protocol==="http:"){
-return escapeHTML(url.href);
-}
-
-}catch(error){}
-
-return "#";
-
-}
-
-createLinks();
-
-</script>
 
 </body>
 </html>
